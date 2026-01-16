@@ -6,6 +6,7 @@ import gianmarte.entitles.subclasses.Genere;
 import gianmarte.entitles.subclasses.GiocoDaTavolo;
 import gianmarte.entitles.subclasses.Videogioco;
 
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -26,6 +27,8 @@ public class Application {
                     case 1 -> aggiungiVideogioco(sc, collezione);
                     case 2 -> aggiungiGiocoDaTavolo(sc, collezione);
                     case 3 -> cercaPerId(sc, collezione);
+                    case 4 -> rimuoviPerId(sc, collezione);
+                    case 5 -> cercaPerPrezzo(sc, collezione);
                     case 0 -> {
                         System.out.println("chisurua dal programma.");
                         return;
@@ -102,9 +105,9 @@ public class Application {
                 1) aggiungi videogioco
                 2) aggiungi gioco da tavolo
                 3) cerca per id
-                4) cerca per prezzo
-                5) cerca per numero giocatori
-                6) rimuovi per id
+                4) rimuovi per id
+                5) cerca per prezzo
+                6) cerca per numero giocatori 
                 7) statistiche
                 0) esci
                 """);
@@ -117,5 +120,27 @@ public class Application {
         Gioco g = c.cercaPerId(id);
         System.out.print(g);
     }
+
+    private static void rimuoviPerId(Scanner sc, CollezioneGiochi c) {
+        System.out.print("id da rimuovere: ");
+        int id = Integer.parseInt(sc.nextLine());
+
+        c.rimuovi(id);
+        System.out.println("rimosso correttamente");
+    }
+
+    private static void cercaPerPrezzo(Scanner sc, CollezioneGiochi c) {
+        System.out.print("prezzo massimo: ");
+        double maxPrezzo = Double.parseDouble(sc.nextLine());
+
+        List<Gioco> risultati = c.cercaPerPrezzo(maxPrezzo);
+
+        if (risultati.isEmpty()) {
+            System.out.println("Nessun gioco trovato.");
+        } else {
+            risultati.forEach(System.out::println);
+        }
+    }
+
 
 }
