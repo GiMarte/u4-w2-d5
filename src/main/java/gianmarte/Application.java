@@ -1,8 +1,55 @@
 package gianmarte;
 
-public class Application {
+import gianmarte.entitles.CollezioneGiochi;
 
+import java.util.Scanner;
+
+public class Application {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+
+        Scanner sc = new Scanner(System.in);
+        CollezioneGiochi collezione = new CollezioneGiochi();
+
+        while (true) {
+            stampaMenu();
+
+            try {
+                int scelta = Integer.parseInt(sc.nextLine());
+
+                switch (scelta) {
+
+                    case 1 -> aggiungiVideogioco(sc, collezione);
+                    case 2 -> aggiungiGiocoDaTavolo(sc, collezione);
+                    case 3 -> cercaPerId(sc, collezione);
+                    case 4 -> cercaPerPrezzo(sc, collezione);
+                    case 5 -> cercaPerGiocatori(sc, collezione);
+                    case 6 -> rimuovi(sc, collezione);
+                    case 7 -> collezione.statistiche();
+
+                    case 0 -> {
+                        System.out.println("chisurua dal programma.");
+                        return;
+                    }
+
+                    default -> System.out.println("scelta non valida.");
+                }
+
+            } catch (Exception e) {
+                System.out.println("errore: " + e.getMessage());
+            }
+        }
     }
-}
+
+    private static void stampaMenu() {
+        System.out.println("""
+                
+                1) aggiungi videogioco
+                2) aggiungi gioco da tavolo
+                3) cerca per id
+                4) cerca per prezzo
+                5) cerca per numero giocatori
+                6) rimuovi per id
+                7) statistiche
+                0) esci
+                """);
+    }
