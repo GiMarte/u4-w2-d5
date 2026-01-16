@@ -19,12 +19,6 @@ public class Application {
                 switch (scelta) {
 
                     case 1 -> aggiungiVideogioco(sc, collezione);
-                    case 2 -> aggiungiGiocoDaTavolo(sc, collezione);
-                    case 3 -> cercaPerId(sc, collezione);
-                    case 4 -> cercaPerPrezzo(sc, collezione);
-                    case 5 -> cercaPerGiocatori(sc, collezione);
-                    case 6 -> rimuovi(sc, collezione);
-                    case 7 -> collezione.statistiche();
 
                     case 0 -> {
                         System.out.println("chisurua dal programma.");
