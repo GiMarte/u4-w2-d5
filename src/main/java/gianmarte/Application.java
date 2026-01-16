@@ -1,6 +1,7 @@
 package gianmarte;
 
 import gianmarte.entitles.CollezioneGiochi;
+import gianmarte.entitles.Gioco;
 import gianmarte.entitles.subclasses.Genere;
 import gianmarte.entitles.subclasses.GiocoDaTavolo;
 import gianmarte.entitles.subclasses.Videogioco;
@@ -24,7 +25,7 @@ public class Application {
 
                     case 1 -> aggiungiVideogioco(sc, collezione);
                     case 2 -> aggiungiGiocoDaTavolo(sc, collezione);
-                    case 3 -> System.out.println(collezione);
+                    case 3 -> cercaPerId(sc, collezione);
                     case 0 -> {
                         System.out.println("chisurua dal programma.");
                         return;
@@ -108,4 +109,13 @@ public class Application {
                 0) esci
                 """);
     }
+
+    private static void cercaPerId(Scanner sc, CollezioneGiochi c) {
+        System.out.print("ID: ");
+        int id = Integer.parseInt(sc.nextLine());
+
+        Gioco g = c.cercaPerId(id);
+        System.out.print(g);
+    }
+
 }

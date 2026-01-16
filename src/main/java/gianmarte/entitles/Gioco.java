@@ -20,4 +20,12 @@ public abstract class Gioco {
     public double getPrezzo() {
         return prezzo;
     }
-}
+
+    @Override public String toString() {
+    return "Gioco{" +
+            "id=" + id +
+            ", titolo='" + titolo + '\'' +
+            ", annoPubblicazione=" + annoPubblicazione +
+            ", prezzo=" + prezzo +
+            '}';
+}}

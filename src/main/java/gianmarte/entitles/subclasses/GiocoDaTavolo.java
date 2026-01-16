@@ -22,4 +22,11 @@ public class GiocoDaTavolo extends Gioco {
     public boolean supportaGiocatori(int n) {
         return n >= minGiocatori && n <= maxGiocatori;
     }
+
+    @Override public String toString() {
+        return super.toString() + "Gioco da tavolo " +
+                ", Giocatori: " + minGiocatori + "-" + maxGiocatori +
+                ", Durata media: " + durataMediaMinuti + " min";
+    }
+
 }

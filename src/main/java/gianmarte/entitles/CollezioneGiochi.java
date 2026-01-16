@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
 public class CollezioneGiochi {
 
 
-    private List<Gioco> giochi = new ArrayList<>();
+    protected List<Gioco> giochi = new ArrayList<>();
 
     public void aggiungi(Gioco gioco) {
         if (giochi.stream()
@@ -47,5 +47,7 @@ public class CollezioneGiochi {
         throw new NoSuchElementException("id non trovato");
     }
 
-
+    public List<Gioco> getGiochi() {
+        return giochi;
+    }
 }

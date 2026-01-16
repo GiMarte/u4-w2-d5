@@ -14,4 +14,11 @@ public class Videogioco extends Gioco {
         this.oreGioco = oreGioco;
         this.genere = genere;
     }
-}
+
+    @Override public String toString() {
+    return super.toString() + "Videogioco {" +
+            "piattaforma='" + piattaforma + ' ' +
+            ", oreGioco=" + oreGioco +
+            ", genere=" + genere +
+            '}';
+}}
