@@ -5,5 +5,6 @@ public enum Genere {
     FPS,
     RPG,
     STRATEGY,
-    SIMULATION
+    SIMULATION,
+    MOBA,
 }

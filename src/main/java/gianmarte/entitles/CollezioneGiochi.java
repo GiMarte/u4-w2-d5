@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 public class CollezioneGiochi {
+
+
     private List<Gioco> giochi = new ArrayList<>();
 
     public void aggiungi(Gioco gioco) {
