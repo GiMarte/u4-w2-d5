@@ -136,7 +136,7 @@ public class Application {
         List<Gioco> risultati = c.cercaPerPrezzo(maxPrezzo);
 
         if (risultati.isEmpty()) {
-            System.out.println("Nessun gioco trovato.");
+            System.out.println("nessun gioco trovato");
         } else {
             risultati.forEach(System.out::println);
         }
